@@ -4,6 +4,8 @@
   código dentro de las funciones ya definidas. 
   No comentar la funcion 
 */
+
+
 function filtrar(funcion) {
   // Escribi una función filtrar en el prototipo de Arrays,
   // que recibe una funcion (callback) que devuelve true o false.
@@ -24,8 +26,14 @@ function filtrar(funcion) {
   // productos.filtrar(function(p) {
   //   return p.price >= 50;
   // }) => [{price: 100, name:'tv'}]
-
-};
+  
+  Array.prototype.filtrar = this.map(function(a, funcion){
+    let ne = this.map(function(p, a){
+      return p[a];
+    })    
+    return ne;
+  })
+   }
 
 // No modifiques nada debajo de esta linea //
 

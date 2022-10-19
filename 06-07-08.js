@@ -9,8 +9,12 @@ function crearClasePersona() {
     constructor(nombre, edad, hobbies, amigos) {
       // El constructor de la clase Persona recibe nombre (string), edad (integer), hobbies (array de strings), amigos (array de objetos)
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
-
       // Tu código aca:
+
+      this.nombre = nombre,
+      this.edad = edad,
+      this.hobbies = hobbies,
+      this.amigos = amigos;
 
     }
 
@@ -21,6 +25,9 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+      let amigo = {nombre, edad}
+         this.amigos.push(amigo);
+
     }
 
     addHobby(hobby) {
@@ -28,6 +35,9 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      
+
+      this.hobbies.push(hobby);
 
     }
     getFriends() {
@@ -39,6 +49,13 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+
+
+      var nombreAmigos = this.amigos.map(function(a){
+        return a["nombre"];
+      })
+      return nombreAmigos;
+
     }
 
     getHobbies() {
@@ -47,6 +64,11 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
+
+      var nueHobi = this.hobbies.map(function(a){
+        return a;
+      })
+      return nueHobi;
 
     }
 
@@ -66,6 +88,16 @@ function crearClasePersona() {
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
 
       // Tu código aca:
+
+      var edades = this.amigos.map(function(a){
+        return a["edad"];
+      })
+
+      var semipromedio = 0;
+      for (let i = 0; i < edades.length; i++) {
+        semipromedio = semipromedio + edades[i]
+      }
+      return semipromedio/edades.length;
 
     }
   };
